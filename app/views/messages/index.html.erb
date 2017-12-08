@@ -1,0 +1,21 @@
+<h3>You are user: <%= session[:username] %></h3>
+
+<% if !(@messages.empty?) %>
+  <% @messages.each do |message| %>
+    <ul>
+      <li><%= message.text %> by <%= message.username %></li>
+    </ul>
+  <% end %>
+<% end %>
+
+
+<%= form_for :message, url: messages_path do |message| %>
+  <p>
+    <%= message.label :text %></br>
+    <%= message.text_field :text %>
+  </p>
+
+  <p>
+    <%= message.submit value="Submit Message" %>
+  </p>
+<% end %>

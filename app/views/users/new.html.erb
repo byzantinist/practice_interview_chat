@@ -1,0 +1,14 @@
+<h3>Welcome to our chat application!</h3>
+
+<h3>Please choose a username:</h3>
+
+<%= form_for :user, url: users_path do |user| %>
+  <p>
+    <%= user.label :username %></br>
+    <%= user.text_field :username %>
+  </p>
+
+  <p>
+    <%= user.submit value="Enter" %>
+  </p>
+<% end %>
